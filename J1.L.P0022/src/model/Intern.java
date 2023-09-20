@@ -11,7 +11,7 @@ public class Intern extends Candidates {
     }
 
     public Intern(String majors, String semester, String university,String Id, String FirstName, 
-            String LastName, int BirthDate, String Address, 
+            String LastName, String BirthDate, String Address, 
             String Phone, String email, int Candidatetype) {
         super(Id, FirstName, LastName, BirthDate, Address, Phone, email, Candidatetype);
         this.majors = majors;

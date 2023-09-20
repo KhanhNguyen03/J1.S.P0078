@@ -2,7 +2,6 @@ package controller;
 
 import Validate.Validation;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.function.Predicate;
 import model.Candidates;
 import model.Experience;
@@ -20,27 +19,27 @@ public class Management {
        String id = val.checkId();
        String FirstName = val.checkFirstName();
        String LastName= val.checkLastName();
-       String Birthdate=val.checkBirthDay();
+       String BirthDate=val.checkBirthDay();
        String Address=val.checkAddress();
        String Phone = val.checkPhone();
        String email= val.checkEmail();
        switch (type) {
             case 0:
-                int yearExperience = val.checkInt("Year Experience",0,1);
-                String professionalSkil = val.checkProSkill();
-                candidates.add(new Experience( yearExperience, professionalSkil, id, FirstName, LastName, type, Address, Phone, email, type));
+                int yearExperience = val.checkInt("Year Experience",0,100);   
+                String ProfessionalSkil = val.checkProSkill();
+                candidates.add(new Experience(yearExperience, ProfessionalSkil, id, FirstName, LastName, BirthDate, Address, Phone, email,type));
                 break;
                 
             case 1:
                     String graduationDate = val.checkGraduation();
                     String graduationRank = val.checkRank();
-                    candidates.add(new Fresher(graduationDate, graduationRank, email, id, FirstName, LastName, type, Address, Phone, email, type));
+                    candidates.add(new Fresher(graduationDate, graduationRank, email, id, FirstName, LastName, BirthDate, Address, Phone, email, type));
                     break;
                 case 2:
                     String major =val.checkMajors();
                     String semester = val.checkSemester();
                     String university = val.checkUniversityName();
-                    candidates.add(new Intern(major, semester, university, id, FirstName, LastName, type, Address, Phone, email, type));
+                    candidates.add(new Intern(major, semester, university, id, FirstName, LastName, BirthDate, Address, Phone, email, type));
                     break;
                     
             }

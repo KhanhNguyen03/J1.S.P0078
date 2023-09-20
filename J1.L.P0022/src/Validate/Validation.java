@@ -38,7 +38,7 @@ public class Validation {
     }
 
     public boolean isValidAddress(String address) {
-        String regex = "^[A-Za-z0-9\\s]+$";
+        String regex = "^[A-Za-z0-9/\\s]+$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(address);
         return matcher.matches();
@@ -175,8 +175,9 @@ public class Validation {
     public String checkGraduation() {
         String graduation = "";
         while (!isValidGraduation(graduation)) {
-            System.out.println("Enter graduation: ");
+            System.out.println("Enter graduation date: ");
             Scanner sc = new Scanner(System.in);
+             graduation = sc.nextLine();
             if (!isValidGraduation(graduation)) {
                 System.out.println("Invalid input");
             }
@@ -185,10 +186,12 @@ public class Validation {
     }
 
     public String checkEducation() {
+        
         String education = "";
         while (!isValidEducation(education)) {
-            System.out.println("Enter graduation: ");
+            System.out.println("Enter education place: ");
             Scanner sc = new Scanner(System.in);
+            education =sc.nextLine();
             if (!isValidGraduation(education)) {
                 System.out.println("Invalid input");
             }
@@ -199,8 +202,9 @@ public class Validation {
     public String checkRank() {
         String rank = "";
         while (!isValidRank(rank)) {
-            System.out.println("Enter graduation: ");
+            System.out.println("Enter rank of graduation: ");
             Scanner sc = new Scanner(System.in);
+            rank =sc.nextLine();
             if (!isValidRank(rank)) {
                 System.out.println("Invalid input");
             }
@@ -251,8 +255,9 @@ public class Validation {
     public String checkProSkill() {
         String proSkill = "";
         while (!isValidProSkill(proSkill)) {
-            System.out.println("Enter graduation: ");
+            System.out.println("Enter ProSkill: ");
             Scanner sc = new Scanner(System.in);
+            proSkill = sc.nextLine();
             if (!isValidProSkill(proSkill)) {
                 System.out.println("Invalid input");
             }
@@ -274,7 +279,7 @@ public class Validation {
     }
     
     public boolean isValidSemester(String semester) {
-        String regex = "^[A-Za-z\\s]+$";
+        String regex = "^[0-9]+$";;
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(semester);
         return matcher.matches();
@@ -333,6 +338,8 @@ public class Validation {
             System.out.print("Enter again: ");
         }
     }
+    
+  
 
     
 }

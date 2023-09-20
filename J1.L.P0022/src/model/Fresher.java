@@ -13,7 +13,7 @@ public class Fresher extends Candidates {
     }
 
     public Fresher(String graduationDate, String graduationRank,String education,String Id, String FirstName, String LastName, 
-            int BirthDate, String Address, String Phone, String email, int Candidatetype) {
+            String BirthDate, String Address, String Phone, String email, int Candidatetype) {
         super(Id, FirstName, LastName, BirthDate, Address, Phone, email, Candidatetype);
         this.graduationDate = graduationDate;
         this.graduationRank = graduationRank;
